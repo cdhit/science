@@ -1,0 +1,56 @@
+.textbook-reader {
+  margin: 1.5rem 0;
+}
+
+.textbook-reader__retry {
+  min-height: 2.4rem;
+  padding: 0.35rem 0.8rem;
+  border: 0;
+  border-radius: 3px;
+  background: var(--md-primary-fg-color);
+  color: #fff;
+  cursor: pointer;
+}
+
+.textbook-reader__status {
+  margin: 0.75rem 0 0.35rem;
+  font-weight: 600;
+}
+
+.textbook-reader__progress-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 1.5rem;
+}
+
+.textbook-reader__progress-row progress {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 0.8rem;
+  accent-color: var(--md-primary-fg-color);
+}
+
+.textbook-reader__progress-row span {
+  min-width: 9rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.82rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.textbook-reader__error {
+  color: #b42318;
+}
+
+.textbook-reader [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .textbook-reader__progress-row span {
+    min-width: 6.5rem;
+    font-size: 0.72rem;
+  }
+
+}

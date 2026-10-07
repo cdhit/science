@@ -1,0 +1,241 @@
+:root {
+  --md-primary-fg-color: #176b63;
+  --md-primary-fg-color--light: #318d82;
+  --md-primary-fg-color--dark: #104d48;
+  --md-accent-fg-color: #c47724;
+}
+
+.md-content {
+  max-width: 980px;
+}
+
+.md-typeset img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.25rem 0 2rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.source-image-viewer {
+  position: relative;
+  display: block;
+}
+
+.source-image-fullscreen {
+  position: absolute;
+  z-index: 1;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  background: rgba(20, 28, 28, 0.82);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.source-image-viewer:fullscreen {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+  background: #111;
+}
+
+.source-image-viewer:fullscreen a {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+
+.source-image-viewer:fullscreen img {
+  width: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0;
+  border: 0;
+  object-fit: contain;
+}
+
+.source-image-viewer:fullscreen .source-image-fullscreen {
+  position: fixed;
+}
+
+.source-image-viewer[data-annotations] {
+  margin: 1.25rem 0 2rem;
+}
+
+.source-image-viewer[data-annotations] img {
+  margin: 0;
+}
+
+.annotation-toolbar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 48px;
+  padding: 6px 8px;
+  border: 1px solid #d7dfdd;
+  background: #f4f7f6;
+  color: #202124;
+}
+
+.annotation-tool,
+.annotation-toolbar .source-image-fullscreen {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: #374540;
+  cursor: pointer;
+}
+
+.annotation-toolbar svg {
+  width: 20px;
+  height: 20px;
+}
+
+.annotation-tool:hover,
+.annotation-toolbar .source-image-fullscreen:hover {
+  background: #e0e8e5;
+}
+
+.annotation-tool[aria-pressed="true"] {
+  border-color: #176b63;
+  background: #d8ede8;
+  color: #104d48;
+}
+
+.annotation-tool:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.annotation-swatch {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  border: 4px solid #f4f7f6;
+  border-radius: 50%;
+  background: var(--swatch);
+  cursor: pointer;
+}
+
+.annotation-swatch[aria-pressed="true"] {
+  outline: 2px solid #52615a;
+  outline-offset: -1px;
+}
+
+.annotation-toolbar input[type="range"] {
+  width: 72px;
+  height: 32px;
+  margin: 0 4px;
+  accent-color: #176b63;
+}
+
+.annotation-status {
+  margin-left: auto;
+  max-width: 100%;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #176b63;
+  overflow-wrap: anywhere;
+}
+
+.annotation-status[data-problem="true"] {
+  color: #ad4321;
+}
+
+.annotation-canvas {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.annotation-canvas[data-tool="pen"],
+.annotation-canvas[data-tool="eraser"] {
+  pointer-events: auto;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.source-image-viewer[data-annotations]:fullscreen {
+  grid-template-rows: auto minmax(0, 1fr);
+  margin: 0;
+}
+
+.source-image-viewer[data-annotations]:fullscreen .annotation-toolbar {
+  align-self: stretch;
+  width: 100%;
+}
+
+.source-image-viewer[data-annotations]:fullscreen img {
+  max-height: calc(100vh - 100px);
+}
+
+.source-image-viewer[data-annotations]:fullscreen .source-image-fullscreen {
+  position: static;
+}
+
+@media (max-width: 600px) {
+  .annotation-toolbar {
+    gap: 4px;
+  }
+
+  .annotation-status {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+}
+
+.arithmatex {
+  overflow-x: auto;
+}
+
+.page-annotation-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+}
+
+.page-annotation-toolbar {
+  position: fixed;
+  z-index: 10001;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  border-radius: 6px;
+  box-shadow: 0 2px 12px #0002;
+}
+
+.page-annotation-toolbar .annotation-status {
+  min-width: 60px;
+}
+
+.md-main {
+  padding-bottom: 96px;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+.md-footer__inner {
+  max-width: 980px;
+  margin: 0 auto;
+}

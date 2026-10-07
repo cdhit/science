@@ -1,0 +1,87 @@
+site_name: ACAS Science 题目分析
+site_description: 逐题查看 ACAS Science 原题与分析
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.footer
+    - navigation.top
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: teal
+      accent: amber
+
+nav:
+  - 首页: index.md
+  - 知识体系图: knowledge-map.md
+  - 教材 Topic 与考题对应表: textbook-topic-map.md
+  - 教材阅读器: textbook-reader.md
+  - 题目:
+      - 第 1 题: questions/q01.md
+      - 第 2 题: questions/q02.md
+      - 第 3 题: questions/q03.md
+      - 第 4 题: questions/q04.md
+      - 第 5 题: questions/q05.md
+      - 第 6 题: questions/q06.md
+      - 第 7 题: questions/q07.md
+      - 第 8 题: questions/q08.md
+      - 第 9 题: questions/q09.md
+      - 第 10 题: questions/q10.md
+      - 第 11 题: questions/q11.md
+      - 第 12 题: questions/q12.md
+      - 第 13 题: questions/q13.md
+      - 第 14 题: questions/q14.md
+      - 第 15 题: questions/q15.md
+      - 第 16 题: questions/q16.md
+      - 第 17 题: questions/q17.md
+      - 第 18 题: questions/q18.md
+      - 第 19 题: questions/q19.md
+      - 第 20 题: questions/q20.md
+      - 第 21 题: questions/q21.md
+      - 第 22 题: questions/q22.md
+      - 第 23 题: questions/q23.md
+      - 第 24 题: questions/q24.md
+      - 第 25 题: questions/q25.md
+      - 第 26 题: questions/q26.md
+      - 第 27 题: questions/q27.md
+      - 第 28 题: questions/q28.md
+      - 第 29 题: questions/q29.md
+      - 第 30 题: questions/q30.md
+      - 第 31 题: questions/q31.md
+      - 第 32 题: questions/q32.md
+      - 第 33 题: questions/q33.md
+      - 第 34 题: questions/q34.md
+      - 第 35 题: questions/q35.md
+      - 第 36 题: questions/q36.md
+      - 第 37 题: questions/q37.md
+      - 第 38 题: questions/q38.md
+      - 第 39 题: questions/q39.md
+      - 第 40 题: questions/q40.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
+  - javascripts/mermaid.js
+  - javascripts/image-fullscreen.js
+  - javascripts/lucide.min.js
+  - javascripts/annotations.js
+  - javascripts/textbook-reader-progress.js
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/textbook-reader.css
